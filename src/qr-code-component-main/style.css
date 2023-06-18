@@ -1,0 +1,34 @@
+body {
+  font-family: 'Outfit', sans-serif;
+}
+
+@media screen and (min-width: 376px) and (max-width: 375px) {
+  /* desktop */
+}
+@media screen and (max-width: 375px) {
+  /* mobile */
+}
+:root {
+  --qr-code-white: hsl(0, 0%, 100%);
+  --qr-code-light-gray: hsl(212, 45%, 89%);
+  --qr-code-grayish-blue: hsl(220, 15%, 55%);
+  --qr-code-dark-blue: hsl(218, 44%, 22%);
+}
+
+body {
+  background-color: var(--qr-code-light-gray);
+}
+.card {
+  background-color: var(--qr-code-white);
+}
+
+.card__img {
+  @apply w-full;
+  object-fit: cover;
+}
+
+.card__title {
+}
+.card__content {
+  color: var(--qr-code-grayish-blue);
+}

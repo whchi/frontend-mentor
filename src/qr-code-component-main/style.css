@@ -27,8 +27,6 @@ body {
   object-fit: cover;
 }
 
-.card__title {
-}
 .card__content {
   color: var(--qr-code-grayish-blue);
 }

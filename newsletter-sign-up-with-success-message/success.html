@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32"
+    href="/newsletter-sign-up-with-success-message/assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+  <style>
+    :root {
+      --tomato: hsl(4, 100%, 67%);
+      --dark-slate-grey: hsl(234, 29%, 20%);
+      --charcoal-grey: hsl(235, 18%, 26%);
+      --grey: hsl(231, 7%, 60%);
+      --white: hsl(0, 0%, 100%)
+    }
+
+    html {
+      font-family: 'Roboto' !important;
+      font-size: 16px;
+    }
+
+
+    body {
+      background-color: var(--charcoal-grey);
+    }
+
+    div.content {
+      background-color: var(--white);
+      color: var(--dark-slate-grey)
+    }
+
+    section button {
+      background-color: var(--dark-slate-grey) !important;
+      color: var(--white);
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        screens: {
+          xsm: '376px',
+        },
+      },
+    };
+  </script>
+</head>
+
+<body>
+  <section class="grid place-items-center h-screen">
+    <div
+      class="content xsm:p-12 pt-12 px-6 xsm:rounded-[24px] xsm:w-96 xsm:h-96 h-full w-full flex xsm:justify-center xsm:items-start flex-col">
+      <img src="/newsletter-sign-up-with-success-message/assets/images/icon-list.svg" alt="vv" width="40" height="40">
+      <h1 class="font-bold text-[40px] leading-none xsm:py-4 max-xsm:my-8">Thanks for subscribing!</h1>
+      <p class="text-normal">
+        A confirmation email has been sent to <span class="font-bold">ash@loremcompany.com.</span>
+        Please open it and click the button inside to confirm your subscription.
+      </p>
+      <button type="submit" onclick="window.location.href='/newsletter-sign-up-with-success-message'"
+        class="w-full rounded-md p-4 mt-5 text-center text-sm max-xsm:last-of-type:mt-auto max-xsm:last-of-type:mb-8">
+        Dismiss message
+      </button>
+    </div>
+  </section>
+</body>
+
+</html>

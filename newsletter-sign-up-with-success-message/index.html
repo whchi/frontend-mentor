@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32"
+    href="/newsletter-sign-up-with-success-message/assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+  <style>
+    :root {
+      --tomato: hsl(4, 100%, 67%);
+      --dark-slate-grey: hsl(234, 29%, 20%);
+      --charcoal-grey: hsl(235, 18%, 26%);
+      --grey: hsl(231, 7%, 60%);
+      --white: hsl(0, 0%, 100%);
+      --tomato-\.3: hsla(4, 100%, 67%, 0.3);
+    }
+
+    html {
+      font-family: 'Roboto' !important;
+      font-size: 16px;
+    }
+
+
+    body {
+      background-color: var(--charcoal-grey);
+    }
+
+    div.content {
+      background-color: var(--white);
+      color: var(--dark-slate-grey);
+    }
+
+    ul li {
+      line-height: 2;
+    }
+
+    ul li::before {
+      content: '';
+      display: inline-block;
+      background-image: url('/newsletter-sign-up-with-success-message/assets/images/icon-list.svg');
+      background-repeat: no-repeat;
+      background-size: 1em;
+      margin-right: 10px;
+      vertical-align: middle;
+      width: 1.05em;
+      height: 1.05em;
+    }
+
+    section button {
+      background-color: var(--dark-slate-grey);
+      color: var(--white);
+    }
+
+    input {
+      border: var(--grey) 1px solid;
+    }
+
+    input.validate-error {
+      border: var(--tomato) 1px solid;
+      background-color: var(--tomato-\.3);
+    }
+
+    span.validate-error {
+      color: var(--tomato);
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        screens: {
+          xsm: '376px',
+        },
+      },
+    };
+  </script>
+</head>
+
+<body>
+  <section class="grid place-items-center h-screen">
+    <div
+      class="xsm:p-6 content xsm:rounded-[40px] w-3/4 max-xsm:w-full flex justify-center items-center flex-row-reverse max-xsm:flex-col">
+      <picture>
+        <source srcset="/newsletter-sign-up-with-success-message/assets/images/illustration-sign-up-desktop.svg"
+          media="(min-width:376px)">
+        <source srcset="/newsletter-sign-up-with-success-message/assets/images/illustration-sign-up-mobile.svg"
+          media="(max-width:375px)">
+        <img src="/newsletter-sign-up-with-success-message/assets/images/illustration-sign-up-desktop.svg"
+          alt="background pattern">
+      </picture>
+      <div class="py-16 px-16 max-xsm:py-8 max-xsm:px-6">
+        <h1 class="text-5xl font-bold max-xsm:text-[40px] max-xsm:leading-snug">Stay updated!</h1>
+        <p class="font-normal text-md py-4">
+          Join 60,000+ product managers receiving monthly updates on:
+        </p>
+        <ul class="font-normal py-4">
+          <li>Product discovery and building what matters</li>
+          <li>Measuring to ensure updates are a success</li>
+          <li>And much more!</li>
+        </ul>
+        <div class="font-normal pt-4 pb-2 text-xs">
+          <div class="flex justify-between">
+            <label for="email" class="text-sm font-bold">Email address</label>
+            <span class="font-bold validate-error invisible">Valid email required</span>
+          </div>
+          <form novalidate class="w-full">
+            <input id="email" type="email" placeholder="email@company.com"
+              class="py-4 px-6 border rounded-md block w-full mt-1 text-sm" required>
+            <button
+              class="w-full rounded-md py-4 px-12 mt-5 text-center text-lg max-xsm:px-6 max-xsm:text-normal">Subscribe
+              to monthly
+              newsletter</button>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <script>
+    const $email = document.getElementById('email');
+    const emailPattern = /^[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+$/gm;
+    const $emailMessage = document.querySelector('span.invisible');
+
+    document.querySelector('form').addEventListener('submit', e => {
+      $email.classList.remove('validate-error');
+      $emailMessage.classList.add('invisible')
+      e.preventDefault();
+      if (!emailPattern.test($email.value)) {
+        $emailMessage.classList.remove('invisible');
+        $email.classList.add('validate-error');
+      } else {
+        window.location.href = '/newsletter-sign-up-with-success-message/success.html';
+      }
+    });
+
+  </script>
+</body>
+
+</html>
